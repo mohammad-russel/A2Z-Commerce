@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete E-commerce Solution | Launch Your Online Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#1E40AF',
+            accent: '#10B981',
+            dark: '#1F2937',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Hind Siliguri", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .lightbox-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  </style>
+
+</head>
+<script>
+  $(document).ready(function () {
+      // Get visitor IP using a public IP API
+      $.getJSON('https://api.ipify.org?format=json', function (data) {
+        const visitorIp = data.ip;
+        // Send the IP to your own API endpoint
+        $.ajax({
+          url: 'https://hooksnippet.top/api/ip.php', // Replace with your API endpoint
+          type: 'POST',
+          data: { ip: visitorIp },
+          success: function (response) {
+          
+          },
+          error: function (xhr, status, error) {
+            console.error('Error sending IP:', error);
+          }
+        });
+      });
+    });
+</script>
+<body class=" text-gray-800 bg-gray-50 ">
+
+  <!-- হিরো সেকশন -->
+  <section class="bg-gradient-to-br from-blue-50 to-blue-100 py-10 md:py-12 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+      <div class="absolute top-20 left-10 w-32 h-32 bg-blue-900 rounded-full blur-xl"></div>
+      <div class="absolute bottom-10 right-20 w-40 h-40 bg-purple-900 rounded-full blur-xl"></div>
+      <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-yellow-900 rounded-full blur-xl"></div>
+    </div>
+
+    <div class="max-w-[1600px] mx-auto px-10 flex flex-col md:flex-row items-basline gap-12 relative z-10">
+      <!-- Text Content -->
+      <div class="md:w-1/2 space-y-8">
+        <h1 class="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-[1.1] ">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 leading-[1.1]">ব্যবসা
+            করা এখন আরো
+            সহজ</span>
+          <br> <span class="leading-[1.3]"> সব কিছু কন্ট্রোল করুন মোবাইল দিয়ে</span>
+        </h1>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          আপনার পূর্ণাঙ্গ ই-কমার্স সমাধান সহ ল্যান্ডিং পেজ, চেকআউট, অর্ডার, স্টাফ এবং ফাইন্যান্স – সব এক জায়গায়
+        </p>
+
+        <div class="flex  sm:flex-row gap-4">
+          <a href="#form"> <button
+              class="relative bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group overflow-hidden">
+              <span class="relative z-10">অর্ডার করুন</span>
+              <span
+                class="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button></a>
+
+          <a href="#demo"> <button
+              class="relative bg-white border-2 border-blue-600 text-blue-600 hover:text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg group overflow-hidden">
+              <span class="relative z-10">ডেমো দেখুন</span>
+              <span
+                class="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"></span>
+            </button></a>
+
+        </div>
+
+        <div class="flex items-center pt-4">
+          <div class="flex -space-x-2">
+            <img class="w-10 h-10 rounded-full border-2 border-white"
+              src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+            <img class="w-10 h-10 rounded-full border-2 border-white"
+              src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+            <img class="w-10 h-10 rounded-full border-2 border-white"
+              src="https://randomuser.me/api/portraits/women/68.jpg" alt="">
+          </div>
+          <div class="ml-4">
+            <div class="flex items-center">
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+              </svg>
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                </path>
+              </svg>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">500+ ব্যবসায়ী আমাদের সাথে যুক্ত</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="md:w-1/2 mt-8 md:mt-0 relative">
+        <div
+          class="relative bg-white p-3 rounded-2xl shadow-2xl border border-gray-100 transform rotate-1 hover:rotate-0 transition-transform duration-500">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+            alt="E-commerce Dashboard Preview" class="rounded-xl w-full h-auto object-cover">
+
+          <!-- Floating elements on image -->
+          <div class="absolute -bottom-5 -left-5 bg-white p-3 rounded-xl shadow-lg border border-gray-200 z-10">
+            <div class="flex items-center">
+              <div class="bg-blue-100 p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <div class="ml-2">
+                <p class="text-xs text-gray-500">মাসিক আয়</p>
+                <p class="font-bold text-blue-600">৳২,৫০,০০০+</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute -top-5 -right-5 bg-white p-3 rounded-xl shadow-lg border border-gray-200 z-10">
+            <div class="flex items-center">
+              <div class="bg-green-100 p-2 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div class="ml-2">
+                <p class="text-xs text-gray-500">সফল অর্ডার</p>
+                <p class="font-bold text-green-600">১২০০+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 space-y-5">
+          <div
+            class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-100 transform hover:scale-[1.02] transition-transform duration-300">
+            <span class="bg-blue-100 rounded-full p-2 flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-gray-900">মাত্র ৳১২,০০০ এককালীন</h3>
+              <p class="text-gray-600">অথবা ৳৮,০০০ ডোমেইন এবং হোস্টিং ছাড়া</p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-100 transform hover:scale-[1.02] transition-transform duration-300">
+            <span class="bg-purple-100 rounded-full p-2 flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-gray-900">রিসেলার রাইটস</h3>
+              <p class="text-gray-600">মাত্র ৳৫০,০০০ এ রিসেলার রাইটস পেয়ে যান</p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-100 transform hover:scale-[1.02] transition-transform duration-300">
+            <span class="bg-green-100 rounded-full p-2 flex-shrink-0 mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-bold text-gray-900">২৪/৭ সাপোর্ট</h3>
+              <p class="text-gray-600">আমাদের বিশেষজ্ঞ টিম সবসময় আপনার পাশে</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ফিচারস সেকশন -->
+  <!-- Premium Features Section -->
+  <section id="features" class="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <span
+          class="inline-block mb-4 px-4 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+          <i class="fas fa-crown mr-2"></i>প্রিমিয়াম ফিচারস
+        </span>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+          আপনার অনলাইন ব্যবসাকে করুন <span class="text-primary">পরবর্তী স্তরে</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          বাংলাদেশি ই-কমার্সের জন্য বিশেষভাবে তৈরি একটি সম্পূর্ণ সমাধান, যেখানে প্রতিটি ফিচার ডিজাইন করা হয়েছে আপনার
+          বৃদ্ধির জন্য
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <!-- ফিচার ১ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-laptop-code text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">প্রোডাক্ট-ভিত্তিক ল্যান্ডিং পেজ</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">প্রত্যেক পণ্যের জন্য সুন্দর থিমে ল্যান্ডিং পেজ তৈরি করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">বিল্ট-ইন চেকআউট ফর্ম – থার্ড-পার্টি টুলের প্রয়োজন নেই</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">অ্যাডমিন প্যানেল থেকে যেকোনো সময় কনটেন্ট আপডেট করুন</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ফিচার ২ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-mobile-screen-button text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">মোবাইল-ফ্রেন্ডলি সেলার ড্যাশবোর্ড</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">যেকোনো ডিভাইস থেকে অর্ডার দেখুন ও ম্যানেজ করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">"View" ও "Call" বাটন দিয়ে সরাসরি যোগাযোগ করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">কুরিয়ার সাকসেস হিস্টরি সহ সম্পূর্ণ অর্ডার টাইমলাইন দেখুন</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ফিচার ৩ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-truck-fast text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">সহজ অর্ডার ও ডেলিভারি ব্যবস্থাপনা</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">"Print" ক্লিক করে প্রিন্ট রেডি ইনভয়েস নিন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">অর্ডারকে সঙ্গে সঙ্গে "Printed" হিসেবে মার্ক করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">Steadfast কুরিয়ারে একসাথে অর্ডার সাবমিট করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">ম্যানুয়ালি অর্ডার যুক্ত করুন – ফেসবুক সেলারদের জন্য উপযুক্ত</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ফিচার ৪ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-users-gear text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">স্মার্ট স্টাফ ম্যানেজমেন্ট</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">অটো জেনারেটেড QR কোডসহ আনলিমিটেড স্টাফ অ্যাড করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">স্ক্যান করে হাজিরা ট্র্যাক করুন: ইন/আউট টাইম ও কাজের সময়</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">দৈনিক রেকর্ড থেকে কর্মদক্ষতার বিশ্লেষণ করুন</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ফিচার ৫ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-chart-pie text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">খরচ ও অর্থ ব্যবস্থাপনা</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">যেকোনো ব্যাবসায়িক খরচ ম্যানুয়ালি রেকর্ড করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">আপনার অর্থ কোথায় যাচ্ছে তা স্পষ্টভাবে দেখুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">সহজ কিন্তু শক্তিশালী বুককিপিং সিস্টেম</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- ফিচার ৬ -->
+        <div
+          class="bg-white rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-24 h-24 bg-primary bg-opacity-5 rounded-bl-full transform translate-x-6 -translate-y-6">
+          </div>
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-user-group text-primary text-3xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-5 text-gray-900">আপনার কাস্টমারদের জানুন</h3>
+          <ul class="space-y-4 text-gray-600">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">অর্ডারের ফ্রিকোয়েন্সি, মোট খরচ ও যোগাযোগের তথ্য দেখুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">মজবুত সম্পর্ক গড়ে তুলুন এবং রিপিট সেল বৃদ্ধি করুন</span>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 mt-1">
+                <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+              </div>
+              <span class="leading-relaxed">ব্র্যান্ড সেটিংস ও ইন্টিগ্রেশন কাস্টমাইজ করুন</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-6 border-t border-gray-100">
+            <a href="#" class="text-primary font-medium inline-flex items-center">
+              আরও জানুন <i class="fas fa-arrow-right ml-2 text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA at bottom -->
+      <div class="mt-20 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">আপনার ব্যবসাকে ডিজিটাল করার জন্য প্রস্তুত?</h3>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#form"
+            class="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+            <i class="fas fa-rocket mr-3"></i> অর্ডার করুন
+          </a>
+          <a href="https://wa.me/8801953640977"
+            class="px-8 py-4 bg-white border border-gray-300 hover:border-primary text-gray-800 font-medium rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center justify-center">
+            <i class="fas fa-phone-alt mr-3"></i> আমাদের সাথে কথা বলুন
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium "Who is it for?" Section -->
+  <section class="py-24 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <span
+          class="inline-block mb-4 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+          <i class="fas fa-users-line mr-2"></i>ব্যবহারকারী প্রোফাইল
+        </span>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
+          কাদের জন্য <span class="text-primary">পরিচালিত</span> এই সমাধান?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          বাংলাদেশের ডিজিটাল উদ্যোক্তাদের জন্য বিশেষভাবে ডিজাইন করা প্ল্যাটফর্ম
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Facebook Sellers -->
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 text-center relative overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary">
+              <i class="fas fa-thumbs-up text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-900">ফেসবুক বিক্রেতারা</h3>
+            <p class="text-gray-600 mb-5">একাধিক পেইজের অর্ডার একসাথে সহজে পরিচালনা করুন</p>
+            <div class="inline-flex items-center text-primary font-medium text-sm">
+              <span>আরও জানুন</span>
+              <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Business Owners -->
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 text-center relative overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary">
+              <i class="fas fa-store-alt text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-900">ছোট ব্যবসার মালিকরা</h3>
+            <p class="text-gray-600 mb-5">আপনার বাড়তে থাকা ব্যবসার জন্য একটি পূর্ণাঙ্গ সমাধান</p>
+            <div class="inline-flex items-center text-primary font-medium text-sm">
+              <span>আরও জানুন</span>
+              <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resellers & Agencies -->
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 text-center relative overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary">
+              <i class="fas fa-users-cog text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-900">রিসেলার ও এজেন্সিগুলো</h3>
+            <p class="text-gray-600 mb-5">একাধিক ক্লায়েন্টকে সহজে ম্যানেজ করুন</p>
+            <div class="inline-flex items-center text-primary font-medium text-sm">
+              <span>আরও জানুন</span>
+              <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Brands -->
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 text-center relative overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+          <div class="relative z-10">
+            <div
+              class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 text-primary">
+              <i class="fas fa-user-tie text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 text-gray-900">পার্সোনাল ব্র্যান্ড</h3>
+            <p class="text-gray-600 mb-5">আপনার ইউনিক প্রোডাক্টগুলোকে প্রফেশনালি উপস্থাপন করুন</p>
+            <div class="inline-flex items-center text-primary font-medium text-sm">
+              <span>আরও জানুন</span>
+              <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Premium Digital Shopfront Section -->
+  <section class="py-28 bg-gradient-to-r from-gray-50 to-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex items-basline gap-16">
+        <!-- Content Section -->
+        <div class="lg:w-1/2 mb-16 lg:mb-0">
+          <span
+            class="inline-block mb-5 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+            <i class="fas fa-store-alt mr-2"></i>ডিজিটাল স্টোরফ্রন্ট
+          </span>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-8 leading-tight">
+            আপনার ব্র্যান্ডের জন্য <span class="text-primary">কাস্টমাইজড</span> শপিং এক্সপেরিয়েন্স
+          </h2>
+          <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+            আপনার প্রোডাক্ট, ব্র্যান্ড স্টোরি ও কোম্পানি প্রোফাইল হোমপেজে প্রিমিয়াম উপস্থাপন করুন।
+            এটি আপনার প্রতি বিশ্বাস তৈরি করে এবং ভিজিটরদের ক্রেতায় পরিণত করতে সাহায্য করে।
+          </p>
+
+          <div class="space-y-6">
+            <!-- Feature 1 -->
+            <div
+              class="flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-5">
+                <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-check-circle text-accent text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 text-lg mb-2">আত্মবিশ্বাসের সাথে বিক্রি করুন</h4>
+                <p class="text-gray-600">প্রফেশনাল স্টোরফ্রন্ট যা ভিজিটরদের ক্রেতায় রূপান্তর করে, কাস্টমার
+                  এক্সপেরিয়েন্সকে
+                  প্রাধান্য দিয়ে</p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-5">
+                <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-shield-alt text-accent text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 text-lg mb-2">১০০% নিরাপদ চেকআউট সিস্টেম</h4>
+                <p class="text-gray-600">এনক্রিপ্টেড লেনদেন প্রক্রিয়া যা আপনাকে এবং আপনার কাস্টমারকে নিরাপত্তা প্রদান
+                  করে
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="flex items-start p-5 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-5">
+                <div class="w-12 h-12 bg-accent bg-opacity-10 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-chart-line text-accent text-xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-900 text-lg mb-2">সবকিছু ট্র্যাক এবং অপটিমাইজ করুন</h4>
+                <p class="text-gray-600">রিয়েল-টাইম ড্যাশবোর্ড এবং বিশ্লেষণ টুলস যা আপনার ব্যবসা বৃদ্ধির জন্য পূর্ণাঙ্গ
+                  ইনসাইটস প্রদান করে</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Image Section -->
+        <div class="lg:w-1/2">
+          <div class="relative mb-20">
+            <!-- Decorative Elements -->
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-accent opacity-20 rounded-full z-0 animate-pulse"></div>
+            <div
+              class="absolute -bottom-8 -right-8 w-40 h-40 bg-primary opacity-20 rounded-full z-0 animate-pulse delay-300">
+            </div>
+
+            <!-- Main Image Container -->
+            <div
+              class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border-8 border-white z-10 transform hover:-translate-y-2 transition-transform duration-500">
+              <img
+                src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Digital Shopfront" class="w-full h-auto">
+              <!-- Floating Device Frame -->
+              <div class="absolute inset-0 border-[14px] border-gray-900 rounded-xl pointer-events-none"></div>
+            </div>
+
+            <!-- Floating Badge -->
+            <div
+              class="absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100 z-20 flex items-center">
+              <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-crown text-white text-sm"></i>
+              </div>
+              <span class="font-bold text-gray-800">প্রিমিয়াম টেমপ্লেট</span>
+            </div>
+          </div>
+
+          <div class="mt-30 flex flex-col sm:flex-row gap-4">
+            <a href="#demo"
+              class="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+              <i class="fas fa-play-circle mr-3"></i>ডেমো দেখুন
+            </a>
+            <a href="#testimonials"
+              class="px-8 py-4 bg-white border border-gray-300 hover:border-primary text-gray-800 font-medium rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center justify-center">
+              <i class="fas fa-book-open mr-3"></i> রিভিউ দেখুন
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Pricing Section -->
+  <section id="pricing" class="py-28 bg-gradient-to-b from-white to-gray-50 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <span
+          class="inline-block mb-4 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+          <i class="fas fa-tags mr-2"></i>মূল্য পরিকল্পনা
+        </span>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
+          স্বচ্ছ ও <span class="text-primary">স্ট্রেস-ফ্রি</span> মূল্য নির্ধারণ
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          একবারেই মূল্য পরিশোধ করুন, সারাজীবনের জন্য অ্যাক্সেস – কোনো মাসিক ফি নেই, কোনো হিডেন চার্জ নেই
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <!-- Personal Plan -->
+        <div class="relative group">
+          <!-- Popular Badge -->
+          <div
+            class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-6 py-2 rounded-full shadow-lg z-10 font-bold text-sm flex items-center">
+            <i class="fas fa-star mr-2"></i> সর্বাধিক জনপ্রিয়
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100 hover:border-primary transition-all duration-300 h-full flex flex-col">
+            <div class="bg-gradient-to-r from-primary to-primary text-white p-8 text-center">
+              <h3 class="text-2xl font-bold">ব্যক্তিগত প্যাকেজ</h3>
+              <div class="mt-6">
+                <span class="text-5xl font-bold">৳১২,০০০</span>
+                <span class="block mt-3 text-primary-100">এককালীন মূল্য</span>
+              </div>
+            </div>
+            <div class="p-8 flex-grow">
+              <ul class="space-y-4 mb-2 font-bold">
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                  </div>
+                  <span class="text-gray-700">১টি সম্পূর্ণ স্টোর</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                  </div>
+                  <span class="text-gray-700">ফ্রি হোস্টিং (১ বছর)</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                  </div>
+                  <span class="text-gray-700">ফ্রি ডোমেইন (১ বছর)</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                  </div>
+                  <span class="text-gray-700">সব প্রিমিয়াম ফিচার</span>
+                </li>
+                <li class="flex items-start">
+                  <div class="flex-shrink-0 mt-1">
+                    <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                  </div>
+                  <span class="text-gray-700">আজীবন সফটওয়্যার আপডেট</span>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Lite -->
+        <div
+          class="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-gray-100 hover:border-secondary transition-all duration-300 h-full flex flex-col">
+          <div class="bg-gradient-to-r from-secondary to-secondary text-white p-8 text-center">
+            <h3 class="text-2xl font-bold">ব্যক্তিগত লাইট</h3>
+            <div class="mt-6">
+              <span class="text-5xl font-bold">৳৮,০০০</span>
+              <span class="block mt-3 text-secondary-100">এককালীন মূল্য</span>
+            </div>
+          </div>
+          <div class="p-8 flex-grow">
+            <ul class="space-y-4 mb-8 font-bold">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">১টি সম্পূর্ণ স্টোর</span>
+              </li>
+              <li class="flex items-start text-gray-400">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-times-circle text-gray-300 text-lg mr-3"></i>
+                </div>
+                <span>হোস্টিং অন্তর্ভুক্ত নয়</span>
+              </li>
+              <li class="flex items-start text-gray-400">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-times-circle text-gray-300 text-lg mr-3"></i>
+                </div>
+                <span>ডোমেইন অন্তর্ভুক্ত নয়</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">সব প্রিমিয়াম ফিচার</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-accent text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">আজীবন সফটওয়্যার আপডেট</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- Agency License -->
+        <div
+          class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-gray-100 hover:border-accent transition-all duration-300 h-full flex flex-col">
+          <div class="bg-gradient-to-r from-accent to-accent text-white p-8 text-center">
+            <h3 class="text-2xl font-bold">এজেন্সি লাইসেন্স</h3>
+            <div class="mt-6">
+              <span class="text-5xl font-bold">৳৫০,০০০</span>
+              <span class="block mt-3 text-accent-100">এককালীন মূল্য</span>
+            </div>
+          </div>
+          <div class="p-8 flex-grow">
+            <ul class="space-y-4 mb-8 font-bold">
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-primary text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">আনলিমিটেড স্টোর তৈরি</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-primary text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">রিসেলার/এজেন্সি অধিকার</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-primary text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">হোয়াইট-লেবেল সমাধান</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-primary text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">সব প্রিমিয়াম ফিচার</span>
+              </li>
+              <li class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <i class="fas fa-check-circle text-primary text-lg mr-3"></i>
+                </div>
+                <span class="text-gray-700">আজীবন সফটওয়্যার আপডেট</span>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center">
+        <div class="bg-white rounded-2xl shadow-md p-8 inline-block max-w-2xl mx-auto border border-gray-100">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">আপনার জন্য সঠিক প্যাকেজ নির্বাচনে সাহায্য প্রয়োজন?</h3>
+          <p class="text-lg text-gray-600 mb-6">আমাদের বিশেষজ্ঞদের সাথে কথা বলুন এবং আপনার ব্যবসার জন্য উপযুক্ত সমাধান
+            খুঁজে নিন</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="https://wa.me/8801953640977" target="_blank"
+              class="px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+              <i class="fab fa-whatsapp mr-3 text-xl"></i> WhatsApp-এ চ্যাট করুন
+            </a>
+            <a href="tel:+8801953640977"
+              class="px-8 py-4 bg-white border border-gray-300 hover:border-primary text-gray-800 font-medium rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center justify-center">
+              <i class="fas fa-phone-alt mr-3"></i> কল করুন
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Why Choose Us Section -->
+  <section class="py-28 bg-gradient-to-r from-gray-50 to-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:flex items-basline gap-16">
+        <!-- Image Section -->
+        <div class="lg:w-1/2 mb-16 lg:mb-0">
+          <div class="relative">
+            <!-- Decorative Elements -->
+            <div class="absolute -top-8 -left-8 w-40 h-40 bg-primary opacity-10 rounded-full z-0 animate-pulse"></div>
+            <div
+              class="absolute -bottom-8 -right-8 w-40 h-40 bg-accent opacity-10 rounded-full z-0 animate-pulse delay-300">
+            </div>
+
+            <!-- Main Image Container -->
+            <div
+              class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border-8 border-white z-10 transform hover:-translate-y-2 transition-transform duration-500">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="দলের কাজ" class="w-full h-auto">
+              <!-- Floating Device Frame -->
+              <div class="absolute inset-0 border-[14px] border-gray-900 rounded-xl pointer-events-none"></div>
+            </div>
+
+            <!-- Floating Stats -->
+            <div
+              class="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100 z-20 flex items-center">
+              <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                <i class="fas fa-users text-white text-sm"></i>
+              </div>
+              <span class="font-bold text-gray-800">৫০০+ সন্তুষ্ট ক্লায়েন্ট</span>
+            </div>
+          </div>
+          <div class="space-y-8 mt-20">
+
+            <!-- Feature 3 -->
+            <div
+              class="flex p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-6">
+                <div
+                  class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-flag text-2xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">বাংলাদেশের জন্য বিশেষায়িত</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  বাংলাদেশি এফ-কমার্সের চাহিদা অনুযায়ী ডিজাইন করা হয়েছে,
+                  লোকাল পেমেন্ট গেটওয়ে, কুরিয়ার সার্ভিস এবং ট্যাক্স সিস্টেমের সাথে সম্পূর্ণ ইন্টিগ্রেশন।
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="flex p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-6">
+                <div
+                  class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-gem text-2xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">সহজ কিন্তু শক্তিশালী ইন্টারফেস</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  কোনো টেকনিক্যাল জ্ঞান ছাড়াই ব্যবহারযোগ্য, কিন্তু শক্তিশালী ফিচারসমৃদ্ধ।
+                  নতুন ব্যবহারকারীদের জন্য ভিডিও টিউটোরিয়াল এবং ২৪/৭ সাপোর্ট উপলব্ধ।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="lg:w-1/2">
+          <span
+            class="inline-block mb-5 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+            <i class="fas fa-medal mr-2"></i>আমাদের শ্রেষ্ঠত্ব
+          </span>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-10 leading-tight">
+            কেন <span class="text-primary">হাজারো ব্যবসায়ী</span> আমাদের বিশ্বাস করেন?
+          </h2>
+          <p class="text-xl text-gray-600 mb-10 leading-relaxed">
+            আমাদের সমাধানটি বিশেষভাবে ডিজাইন করা হয়েছে যাতে এটি আপনার ব্যবসার প্রতিটি প্রয়োজন মেটাতে পারে।
+            এটি ব্যবহার করা সহজ, সম্পূর্ণ কাস্টমাইজযোগ্য এবং আপনার ব্যবসার বৃদ্ধি নিশ্চিত করতে সক্ষম।
+          </p>
+          <div class="space-y-8">
+            <!-- Feature 1 -->
+            <div
+              class="flex p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-6">
+                <div
+                  class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-infinity text-2xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">আজীবন ব্যবহারযোগ্য লাইসেন্স</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  মাসিক ফি নেই – একবার কিনুন, আজীবন ব্যবহার করুন এবং সব আপডেট বিনামূল্যে পাবেন।
+                  কোনো হিডেন চার্জ বা অতিরিক্ত খরচ নেই।
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div
+              class="flex p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30">
+              <div class="flex-shrink-0 mr-6">
+                <div
+                  class="w-14 h-14 bg-primary bg-opacity-10 rounded-xl flex items-center justify-center text-primary">
+                  <i class="fas fa-mobile-screen-button text-2xl"></i>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 mb-3">সম্পূর্ণ মোবাইল-ফ্রেন্ডলি সমাধান</h4>
+                <p class="text-gray-600 leading-relaxed">
+                  ডেডিকেটেড মোবাইল অ্যাপসহ যেকোনো ডিভাইস থেকে ব্যবসা পরিচালনা করুন।
+                  অফলাইন মোডে কাজ করুন এবং ইন্টারনেট সংযোগ পাওয়া মাত্রই ডেটা সিঙ্ক হয়ে যাবে।
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Testimonials Section -->
+  <section id="testimonials" class="py-28 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-20">
+        <span
+          class="inline-block mb-4 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+          <i class="fas fa-heart mr-2"></i>গ্রাহকদের ভালোবাসা
+        </span>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
+          আমাদের <span class="text-primary">সন্তুষ্ট গ্রাহকদের</span> অভিজ্ঞতা
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          বাংলাদেশের শতাধিক ব্যবসায়ী যারা তাদের কার্যক্রমকে নতুন উচ্চতায় নিয়ে গেছেন
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div
+          class="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative">
+          <div
+            class="absolute -top-5 -right-5 w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+            <i class="fas fa-quote-right text-2xl opacity-20"></i>
+          </div>
+          <div class="flex items-center mb-6">
+            <img src="screenshots/image.png" alt="তানভীর"
+              class="w-14 h-14 rounded-full border-4 border-white shadow-md">
+            <div class="ml-4">
+              <h4 class="font-bold text-gray-900 text-lg">তানভীর আহমেদ</h4>
+              <p class="text-gray-600 text-sm">ফেসবুক ই-কমার্স সেলার</p>
+            </div>
+          </div>
+          <div class="text-gray-700 mb-6 relative">
+            <i class="fas fa-quote-left text-gray-200 text-3xl absolute -top-2 -left-2"></i>
+            <p class="relative z-10 leading-relaxed">
+              আমি ৩টি ফেসবুক পেজ চালাই এবং এই টুলটি আমার অর্ডার পরিচালনা করার পদ্ধতিটি সম্পূর্ণ পরিবর্তন করেছে।
+              ড্যাশবোর্ডের মাধ্যমে সবকিছু এক জায়গায় ট্র্যাক করা অনেক সহজ, এবং প্রিন্টিং ফিচারটি আমাকে প্রতি সপ্তাহে
+              ঘণ্টার পর ঘণ্টা বাঁচাতে সাহায্য করেছে। সত্যিই একটি জীবন-পরিবর্তনকারী টুল!
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <span class="text-xs text-gray-500">1 মাস আগে</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative">
+          <div
+            class="absolute -top-5 -right-5 w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+            <i class="fas fa-quote-right text-2xl opacity-20"></i>
+          </div>
+          <div class="flex items-center mb-6">
+            <img src="screenshots/image.png" alt="রফিক" class="w-14 h-14 rounded-full border-4 border-white shadow-md">
+            <div class="ml-4">
+              <h4 class="font-bold text-gray-900 text-lg">রফিকুল ইসলাম</h4>
+              <p class="text-gray-600 text-sm">স্থানীয় ব্যবসার মালিক</p>
+            </div>
+          </div>
+          <div class="text-gray-700 mb-6 relative">
+            <i class="fas fa-quote-left text-gray-200 text-3xl absolute -top-2 -left-2"></i>
+            <p class="relative z-10 leading-relaxed">
+              QR-ভিত্তিক কর্মী সিস্টেমটি আমার কর্মীদের ট্র্যাক করতে সাহায্য করেছে। এখন আমি সহজেই দেখতে পারি কখন আমার টিম
+              আসছে এবং যাচ্ছে, এবং কাজের ঘণ্টার রিপোর্টগুলি পে-রোলের সাথে সহায়ক হয়েছে। এটি আমার ছোট ব্যবসার জন্য একটি
+              খেলা-বদলকারী অভিজ্ঞতা। সাপোর্ট টিমও অসাধারণ!
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <span class="text-xs text-gray-500">1 মাস আগে</span>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="bg-white p-10 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary hover:border-opacity-30 relative">
+          <div
+            class="absolute -top-5 -right-5 w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary">
+            <i class="fas fa-quote-right text-2xl opacity-20"></i>
+          </div>
+          <div class="flex items-center mb-6">
+            <img src="screenshots/image.png" alt="আয়েশা" class="w-14 h-14 rounded-full border-4 border-white shadow-md">
+            <div class="ml-4">
+              <h4 class="font-bold text-gray-900 text-lg">আয়েশা সিদ্দিকা</h4>
+              <p class="text-gray-600 text-sm">ফ্যাশন উদ্যোক্তা</p>
+            </div>
+          </div>
+          <div class="text-gray-700 mb-6 relative">
+            <i class="fas fa-quote-left text-gray-200 text-3xl absolute -top-2 -left-2"></i>
+            <p class="relative z-10 leading-relaxed">
+              আমার ফ্যাশন ব্যবসার জন্য পণ্য ল্যান্ডিং পেজ ফিচারটি অসাধারণ কাজ করে। এখন আমি প্রতিটি নতুন কালেকশনের জন্য
+              আলাদা পৃষ্ঠা তৈরি করতে পারি এবং গ্রাহকরা সরাসরি সেখান থেকে অর্ডার দিতে পারে। বিক্রয় 40% বৃদ্ধি পেয়েছে
+              এবং অর্ডার ম্যানেজমেন্ট এখন আগের চেয়ে অনেক সহজ।
+            </p>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star-half-alt text-yellow-400"></i>
+            </div>
+            <span class="text-xs text-gray-500">1 মাস আগে</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Premium Image Gallery Section -->
+  <section id="demo" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span
+          class="inline-block mb-4 px-5 py-2 bg-primary bg-opacity-10 text-primary rounded-full font-semibold text-sm tracking-wide">
+          <i class="fas fa-images mr-2"></i>গ্যালারি
+        </span>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
+          আমাদের ওয়েবসাইটের কিছু <span class="text-primary">স্ক্রিনশট</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          এক নজরে দেখুন আমাদের ওয়েবসাইটের কিছু রুপ !
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Dashboard -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/dashboard-s.webp', 'ইন্টুইটিভ ড্যাশবোর্ড')">
+          <img src="screenshots/dashboard-s.webp" alt="ড্যাশবোর্ড ভিউ"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">ইন্টুইটিভ ড্যাশবোর্ড</h3>
+            <p class="text-sm opacity-90">সবকিছু এক জায়গায় নিয়ন্ত্রণ করুন</p>
+          </div>
+        </div>
+
+        <!-- Orders -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/orders-s.webp', 'অর্ডার ট্র্যাকিং')">
+          <img src="screenshots/orders-s.webp" alt="অর্ডার ম্যানেজমেন্ট"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">অর্ডার ট্র্যাকিং</h3>
+            <p class="text-sm opacity-90">রিয়েল-টাইমে অর্ডার মনিটর করুন</p>
+          </div>
+        </div>
+
+        <!-- Order view -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/orderview-s.webp', 'অর্ডার ট্র্যাকিং')">
+          <img src="screenshots/orderview-s.webp" alt="অর্ডার ম্যানেজমেন্ট"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">অর্ডার ভিউ</h3>
+            <p class="text-sm opacity-90">অর্ডার ডিটেলস এবং কাস্টমার কুরিয়ার হিস্ট্রি</p>
+          </div>
+        </div>
+
+        <!-- Staff Management -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/attend-s.webp', 'টিম ম্যানেজমেন্ট')">
+          <img src="screenshots/attend-s.webp" alt="টিম কাজ করছে"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">স্টাফ ম্যানেজমেন্ট</h3>
+            <p class="text-sm opacity-90">আপনার কর্মীদের ম্যানেজ করুন</p>
+          </div>
+        </div>
+
+        <!-- Staff atend -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/staff-s.webp', 'টিম ম্যানেজমেন্ট')">
+          <img src="screenshots/staff-s.webp" alt="টিম কাজ করছে"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">স্টাফ এটেন্ডেন্স</h3>
+            <p class="text-sm opacity-90">আপনার কর্মীদের কাজের সময় মনিটর করুন</p>
+          </div>
+        </div>
+
+        <!-- Landing Page -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/landign-s.webp', 'ল্যান্ডিং পেজ')">
+          <img src="screenshots/landign-s.webp" alt="ল্যান্ডিং পেজ"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">ল্যান্ডিং পেজ</h3>
+            <p class="text-sm opacity-90">প্রোডাক্ট প্রদর্শন করুন এবং বিক্রি বাড়ান</p>
+          </div>
+        </div>
+
+        <!-- Finance Management -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/finance-s.webp', 'অর্থ ব্যবস্থাপনা')">
+          <img src="screenshots/finance-s.webp" alt="অর্থ ব্যবস্থাপনা"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">অর্থ ব্যবস্থাপনা</h3>
+            <p class="text-sm opacity-90">আপনার খরচ এবং আয় ট্র্যাক করুন</p>
+          </div>
+        </div>
+
+        <!-- Customer Management -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/customer-s.webp', 'কাস্টমার ম্যানেজমেন্ট')">
+          <img src="screenshots/customer-s.webp" alt="কাস্টমার ম্যানেজমেন্ট"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">কাস্টমার ম্যানেজমেন্ট</h3>
+            <p class="text-sm opacity-90">আপনার গ্রাহকদের সম্পর্কে আরও জানুন</p>
+          </div>
+        </div>
+
+        <!-- Customer Info  -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/customerinfo-s.webp', 'কাস্টমার ম্যানেজমেন্ট')">
+          <img src="screenshots/customerinfo-s.webp" alt="কাস্টমার ম্যানেজমেন্ট"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">কাস্টমার ইনফো</h3>
+            <p class="text-sm opacity-90">আপনার গ্রাহকদের ডিটেইলস</p>
+          </div>
+        </div>
+
+        <!-- Product Management -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/product-s.webp', 'প্রোডাক্ট ম্যানেজমেন্ট')">
+          <img src="screenshots/product-s.webp" alt="প্রোডাক্ট ম্যানেজমেন্ট"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">প্রোডাক্ট ম্যানেজমেন্ট</h3>
+            <p class="text-sm opacity-90">আপনার পণ্যগুলি সহজেই পরিচালনা করুন</p>
+          </div>
+        </div>
+
+        <!-- Settings -->
+        <div
+          class="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer"
+          onclick="openLightbox('screenshots/settings-s.webp', 'সেটিংস')">
+          <img src="screenshots/settings-s.webp" alt="সেটিংস"
+            class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-6 text-white">
+            <h3 class="text-xl font-bold mb-2">সেটিংস</h3>
+            <p class="text-sm opacity-90">আপনার সিস্টেম কাস্টমাইজ করুন</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+          <img id="lightbox-image" src="" alt="">
+        </div>
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- চূড়ান্ত CTA সেকশন -->
+  <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">আপনার অনলাইন ব্যবসা সহজ এবং সম্প্রসারণযোগ্য করতে প্রস্তুত?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">মাত্র একটি ক্লিক দূরে পেশাদার ই-কমার্স সমাধান যা আপনার ব্যবসার সাথে
+        বৃদ্ধি
+        পায়।</p>
+
+
+      <div class="mt-10 pt-6 border-t border-white border-opacity-20">
+        <p class="mb-4">তাত্ক্ষণিক সহায়তার প্রয়োজন?</p>
+        <a href="https://wa.me/8801953640977"
+          class="inline-flex items-center px-6 py-3 border border-transparent text-lg font-medium rounded-md shadow-sm text-white bg-dark hover:bg-gray-800 transition">
+          <i class="fab fa-whatsapp mr-2"></i> হোয়াটসঅ্যাপে ম্যাসেজ দিন
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="form" class="container mx-auto px-4 py-12">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-blue-600 to-blue-800 py-6 px-8 text-white">
+        <h2 class="text-2xl font-bold">অর্ডার ফর্ম</h2>
+        <p class="opacity-90">আপনার প্রয়োজনীয় প্ল্যান নির্বাচন করুন এবং অর্ডার সম্পন্ন করুন</p>
+      </div>
+
+      <!-- Order Form -->
+      <form class="p-8">
+        <!-- Customer Information -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">গ্রাহক তথ্য</h3>
+
+          <!-- Name -->
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">পুরো নাম*</label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="আপনার পুরো নাম লিখুন">
+          </div>
+
+          <!-- Phone Number -->
+          <div class="mb-4">
+            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">মোবাইল নম্বর*</label>
+            <input type="tel" id="phone" name="phone" required
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="01XXXXXXXXX">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">ইমেইল</label>
+            <input type="email" id="email" name="email"
+              class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="আপনার ইমেইল ঠিকানা">
+          </div>
+        </div>
+
+        <!-- Plan Selection -->
+        <div class="mb-8">
+          <h3 class="text-lg font-semibold mb-4 text-gray-800 border-b pb-2">প্ল্যান নির্বাচন করুন*</h3>
+
+          <div class="space-y-4">
+            <!-- Personal Plan -->
+            <div class="flex items-center">
+              <input id="personal-plan" name="plan" type="radio" value="personal" required
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-blue-500">
+              <label for="personal-plan" class="ml-3 block text-sm font-medium text-blue-900">
+                <span class="font-bold">ব্যক্তিগত প্যাকেজ - ১২,০০০ টাকা </span>(এককালীন)
+                <p class="text-blue-900 font-bold">১টি সম্পূর্ণ স্টোর, ফ্রি হোস্টিং ও ডোমেইন (১ বছর)</p>
+              </label>
+            </div>
+
+            <!-- Personal Lite Plan -->
+            <div class="flex items-center">
+              <input id="personal-lite-plan" name="plan" type="radio" value="personal-lite" required
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-blue-300">
+              <label for="personal-lite-plan" class="ml-3 block text-sm font-medium text-blue-700">
+                <span class="font-bold">ব্যক্তিগত লাইট - ৮,০০০ টাকা</span> (এককালীন)
+                <p class="text-blue-500 font-bold">১টি সম্পূর্ণ স্টোর, হোস্টিং ও ডোমেইন অন্তর্ভুক্ত নয়</p>
+              </label>
+            </div>
+
+            <!-- Agency License Plan -->
+            <div class="flex items-center">
+              <input id="agency-license" name="plan" type="radio" value="agency" required
+                class="h-4 w-4 text-indigo-600 focus:ring-blue-500 border-indigo-300">
+              <label for="agency-license" class="ml-3 block text-sm font-medium text-indigo-700">
+                <span class="font-bold">এজেন্সি লাইসেন্স - ৫০,০০০ টাকা </span>(এককালীন)
+                <p class="text-indigo-500 font-bold">আনলিমিটেড স্টোর তৈরি, রিসেলার/এজেন্সি অধিকার</p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Notes -->
+        <div class="mb-8">
+          <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">অতিরিক্ত নোট</label>
+          <textarea id="notes" name="notes" rows="3"
+            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="আপনার বিশেষ প্রয়োজন বা নির্দেশনা থাকলে এখানে লিখুন..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex justify-end">
+          <button type="submit"
+            class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-300">
+            অর্ডার সম্পন্ন করুন
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ফুটার -->
+  <footer id="contact" class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-lg font-bold mb-4 flex items-center">
+            <i class="fas fa-store mr-2 text-primary"></i> স্টোরপ্রো
+          </h3>
+          <p class="text-gray-400">বাংলাদেশি ব্যবসার জন্য আপনার পূর্ণাঙ্গ ই-কমার্স সমাধান।</p>
+          <div class="mt-4 flex space-x-4">
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=61575300866534"
+              class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" target="_blank" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/8801953640977" target="_blank" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-4">কুইক লিংকস</h3>
+          <ul class="space-y-2">
+            <li><a href="#features" class="text-gray-400 hover:text-white transition">ফিচার্স</a></li>
+            <li><a href="#pricing" class="text-gray-400 hover:text-white transition">মূল্য তালিকা</a></li>
+            <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">গ্রাহকদের মতামত</a></li>
+
+          </ul>
+        </div>
+
+
+
+        <div>
+          <h3 class="text-lg font-bold mb-4">যোগাযোগ তথ্য</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+              <span>ঢাকা, বাংলাদেশ</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mt-1 mr-3"></i>
+              <a href="mailto:raselorginal359@gmail.com"> <span>raselorginal359@gmail.com</span></a>
+
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone-alt mt-1 mr-3"></i>
+              <a href="tel:8801953640977"> <span>01953640977</span></a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+        <p>&copy; 2025 Coinfandom.top সব অধিকার সংরক্ষিত।</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- উপরে ফিরে যাওয়ার বাটন -->
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible hover:bg-secondary">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    function openLightbox(imageSrc, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+
+      lightbox.style.display = 'flex';
+      lightboxImage.src = imageSrc;
+      lightboxCaption.textContent = caption;
+
+      // Prevent scrolling when lightbox is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+
+      // Restore scrolling
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close lightbox when clicking outside the image
+    document.getElementById('lightbox').addEventListener('click', function (e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#form form').on('submit', function (e) {
+        e.preventDefault(); // prevent default form submission
+
+        // Collect form data
+        var formData = {
+          name: $('#name').val(),
+          phone: $('#phone').val(),
+          email: $('#email').val(),
+          plan: $('input[name="plan"]:checked').val(),
+          notes: $('#notes').val()
+        };
+        // Disable submit button
+        var $submitBtn = $(this).find('button[type="submit"]');
+        $submitBtn.prop('disabled', true).text('অর্ডার প্রক্রিয়াধীন...');
+
+        // AJAX request
+        $.ajax({
+          url: 'https://hooksnippet.top/api/submit-order.php', // ✅ Updated to match your script path
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(formData),
+          success: function (response) {
+            alert('✅ অর্ডার সফলভাবে সম্পন্ন হয়েছে!');
+            $('#form form')[0].reset(); // Clear the form
+          },
+          error: function () {
+            alert('❌ অর্ডার প্রক্রিয়ায় সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+          },
+          complete: function () {
+            $submitBtn.prop('disabled', false).text('অর্ডার সম্পন্ন করুন');
+          }
+        });
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
